@@ -11,10 +11,10 @@ typedef struct Dict {
 	
 }Dict;
 
-typedef struct tree {		// ¿µ¾î »çÀü ÀÌÁø Æ®¸®ÀÇ ³ëµå ±¸Á¶¸¦ Á¤ÀÇ
+typedef struct tree {
 	Dict key;
-	tree *left;		// ¿ŞÂÊ Æ®¸®¿¡ ´ëÇÑ ¸µÅ©
-	tree *right;		// ¿À¸¥ÂÊ Æ®¸®¿¡ ´ëÇÑ ¸µÅ©
+	tree *left;
+	tree *right;
 } tree;
 
 FILE *fp;
@@ -31,9 +31,9 @@ void load()
 		getchar();
 		fp = fopen(buffer, "r");
 		if (fp == NULL)
-			printf("\tÆÄÀÏÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.\n");
+			printf("\tíŒŒì¼ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n");
 		else {
-			printf("\tÆÄÀÏÀ» ºÒ·¯¿Ô½À´Ï´Ù.\n");
+			printf("\tíŒŒì¼ì„ ë¶ˆëŸ¬ì™”ìŠµë‹ˆë‹¤.\n");
 			return;
 		}
 	}
@@ -43,11 +43,11 @@ void load(char *p)
 {
 	fp = fopen(p, "r");
 	if (fp == NULL) {
-		printf("\tÆÄÀÏÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.\n");
+		printf("\tíŒŒì¼ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.\n");
 		return;
 	}
 	else {
-		printf("\tÆÄÀÏÀ» ºÒ·¯¿Ô½À´Ï´Ù.\n");
+		printf("\tíŒŒì¼ì„ ë¶ˆëŸ¬ì™”ìŠµë‹ˆë‹¤.\n");
 		return;
 	}
 }
@@ -220,7 +220,7 @@ int main()
 		gets_s(command, sizeof(command));
 
 		if (strcmp(command, "size") == 0)
-			printf("\t%d°³\n", size);
+			printf("\t%dê°œ\n", size);
 		else if (strcmp(command, "add") == 0)
 			size = size + add();
 		else if (strcmp(command, "exit") == 0)
@@ -235,7 +235,7 @@ int main()
 			else if (strcmp(command, "deleteall") == 0 && moon != NULL)
 				size = size - del_A(moon);
 			else
-				printf("\tÀß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.\n");
+				printf("\tì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤.\n");
 		}
 	}
 	return 0;
